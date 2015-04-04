@@ -7,6 +7,22 @@ import org.apache.commons.dbutils.domain.ShipmentHeader;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
 
+/**
+ * create table `oub_shipment_header` (
+	`oub_shipment_header_id` int (11),
+	`shipment_no` varchar (96),
+	`launch_no` varchar (96),
+	`order_type` varchar (96),
+	`customer_name` varchar (96),
+	`updated_dtm_loc` date 
+); 
+insert into `oub_shipment_header` (`oub_shipment_header_id`, `shipment_no`, `launch_no`, `order_type`, `customer_name`, `updated_dtm_loc`) values('1','123456','10006','1','陈先生','2015-04-03');
+insert into `oub_shipment_header` (`oub_shipment_header_id`, `shipment_no`, `launch_no`, `order_type`, `customer_name`, `updated_dtm_loc`) values('2','100002','10001','2','谢女士','2015-04-02');
+
+ * @author pingan
+ *
+ */
+
 public class HumpPropertyBeanProcessorTest {
 
 	@Test
