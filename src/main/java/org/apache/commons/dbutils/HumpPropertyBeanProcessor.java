@@ -13,21 +13,21 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.dbutils.BeanProcessor;
 
-public class BeanProcessorExt extends BeanProcessor {
+public class HumpPropertyBeanProcessor extends BeanProcessor {
 
-	/*private final Map<Class<?>, SpecialTypeHandle<?>> specialClassMap;
+	private final Map<Class<?>, SpecialTypeHandle<?>> specialClassMap;
 	
-    public BeanProcessorExt() {
+    public HumpPropertyBeanProcessor() {
         this(new HashMap<Class<?>, SpecialTypeHandle<?>>());
     }
 	
-	public BeanProcessorExt(Map<Class<?>, SpecialTypeHandle<?>> specialClassMap) {
+	public HumpPropertyBeanProcessor(Map<Class<?>, SpecialTypeHandle<?>> specialClassMap) {
 		super();
         if (specialClassMap == null) {
             throw new IllegalArgumentException("The SpecialClassMap map cannot be null");
         }
         this.specialClassMap = specialClassMap;
-	}*/
+	}
 	
 	@Override
 	protected int[] mapColumnsToProperties(ResultSetMetaData rsmd,
@@ -80,7 +80,7 @@ public class BeanProcessorExt extends BeanProcessor {
 
 	@Override
 	protected Object processColumn(ResultSet rs, int index, Class<?> propType) throws SQLException {
-		/*Set<Class<?>> classSet = specialClassMap.keySet();
+		Set<Class<?>> classSet = specialClassMap.keySet();
 		boolean containsInterface = classSet.contains(propType);
 		Class<?> containsClass = null;
 		if (!containsInterface) {
@@ -106,7 +106,7 @@ public class BeanProcessorExt extends BeanProcessor {
 			Object o = rs.getObject(index);
 			Object result = handle.getResultObject(propType,o);
 			return result;
-		}*/
+		}
 		return super.processColumn(rs, index, propType);
 	}
 }
