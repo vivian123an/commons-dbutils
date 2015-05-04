@@ -64,7 +64,17 @@ class Vivo extends PhoneDecorator{
 }
 public class DecoratorPattern {
 	public static void main(String[] args) {
-		Phone phone = new PhoneDecorator(new XiaoMi(new Vivo(new BasicPhone())));
+		Phone phone = new PhoneDecorator(new BasicPhone());
+		System.out.println(phone.getPrice());
+		System.out.println(phone.function());
+		System.out.println();
+		
+		phone = new PhoneDecorator(new Vivo(new BasicPhone()));
+		System.out.println(phone.getPrice());
+		System.out.println(phone.function());
+		System.out.println();
+		
+		phone = new PhoneDecorator(new XiaoMi(new Vivo(new BasicPhone())));
 		System.out.println(phone.getPrice());
 		System.out.println(phone.function());
 	}
