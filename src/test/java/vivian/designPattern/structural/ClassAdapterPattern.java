@@ -7,6 +7,15 @@ import java.util.List;
  * 类适配器模式
  * 类适配器模式是以继承的方式来实现，而对象适配器模式是以组合的方式实现。
  * 为了区别对象适配器模式#AdapterPattern
+ * 
+ * Adapter or Wrapper or Translator
+ * Convert the interface of a class into another interface clients expect. 
+ * An adapter lets classes work together that could not otherwise because of incompatible interfaces. 
+ * The enterprise integration pattern equivalent is the translator.
+ * 
+ * eg:
+ * translate ArrayList to IQueue
+ * 
  * @author no1
  * @see    AdapterPattern
  */

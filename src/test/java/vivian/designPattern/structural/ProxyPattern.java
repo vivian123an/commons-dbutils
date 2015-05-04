@@ -16,6 +16,12 @@ package vivian.designPattern.structural;
  * The wrapper delegates to the target
  * To support plug-compatibility of wrapper and target, create an interface
  * 
+ * 
+ * See also(相关设计模式：组合模式、装饰模式、延迟初始化)
+ * Composite pattern
+ * Decorator pattern
+ * Lazy initialization
+ * 
  * @author no1
  *
  */
@@ -45,7 +51,7 @@ class ProxyImage implements Image{
 	@Override
 	public void display() {
 		if(image==null)
-			image = new RealImage(fileName);
+			image = new RealImage(fileName);//延迟初始化
 		image.display();
 	}
 }
