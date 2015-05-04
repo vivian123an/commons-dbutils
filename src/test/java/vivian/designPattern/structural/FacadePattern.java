@@ -1,12 +1,18 @@
 package vivian.designPattern.structural;
 
 /**
+ * 外观设计模式      结构型模式
+ * GoF《设计模式》中说道：为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
+ * 
+ * Façade模式的几个要点：
+ *  1、从客户程序的角度看，Facade模式不仅简化了整个组件系统的接口，同时对于组件内部与外部客户程序来说，
+ *  	从某种程度上也达到了一种“解耦”的效果——内部子系统的任何变化不会影响到Facade接口的变化。
+ *  2、Facade设计模式更注重从架构的层次去看整个系统，而不是单个类的层次。Facade很多时候更是一种架构设计模式。
+ * 
  * Facade	
  * Provide a unified interface to a set of interfaces in a subsystem. 
  * Facade defines a higher-level interface that makes the subsystem easier to use.
  * 
- * GoF《设计模式》中说道：为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
- * 结构型模式
  * @author no1
  *
  */
