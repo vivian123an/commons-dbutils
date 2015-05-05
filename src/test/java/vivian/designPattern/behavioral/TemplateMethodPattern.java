@@ -24,7 +24,7 @@ package vivian.designPattern.behavioral;
  * @see java.io.InputStream
  * @see java.util.AbstractList
  * @see javax.servlet.http.HttpServlet
- *
+ * @see org.springframework.jdbc.core.JdbcTemplate#execute(org.springframework.jdbc.core.ConnectionCallback)
  */
 abstract class AbstractCar{
 	protected abstract void startUp();
