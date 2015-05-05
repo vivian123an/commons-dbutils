@@ -14,8 +14,16 @@ package vivian.designPattern.behavioral;
  * that defines the program skeleton of an algorithm in a method, called template method, which defers some steps to subclasses.
  * It lets one redefine certain steps of an algorithm without changing the algorithm's structure
  * 
+ * All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.
+ * All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
+ * javax.servlet.http.HttpServlet, all the doXXX() methods by default sends a HTTP 405 "Method Not Allowed" error to the response. 
+ * You're free to implement none or any of them.
+
  * 
  * @author no1
+ * @see java.io.InputStream
+ * @see java.util.AbstractList
+ * @see javax.servlet.http.HttpServlet
  *
  */
 abstract class AbstractCar{
