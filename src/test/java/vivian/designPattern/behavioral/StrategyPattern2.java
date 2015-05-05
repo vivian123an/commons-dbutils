@@ -25,6 +25,8 @@ import java.util.List;
  * 
  * @author no1
  * @see java.util.Collections#sort()
+ * @see org.springframework.beans.factory.support.SimpleInstantiationStrategy
+ * @see org.springframework.beans.factory.support.InstantiationStrategy
  */
 interface BillStrategy{
 	double sum(List<Double> list);
