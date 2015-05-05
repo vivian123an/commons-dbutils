@@ -1,5 +1,7 @@
 package vivian.designPattern.structural;
 
+import java.util.List;
+
 /**
  * 装饰模式     结构型设计模式
  * 
@@ -17,7 +19,17 @@ package vivian.designPattern.structural;
  * The decorator pattern is often useful for adhering to the Single Responsibility Principle, 
  * as it allows functionality to be divided between classes with unique areas of concern
  * 
+ * @see javax.servlet.http.HttpServletRequestWrapper
+ * @see javax.servlet.http.HttpServletResponseWrapper
+ * @see java.util.Collections#checkedMap()			checkedXXX()
+ * @see java.util.Collections#synchronizedSet()  	synchronizedXXX()
+ * @see java.util.Collections#unmodifiableList()   	unmodifiableXXX()
  * 
+ * All subclasses InputStream, OutputStream, Reader and Writer have a constructor taking an instance of same type.
+ * @see java.io.InputStream 
+ * @see java.io.OutputStream
+ * @see java.io.Reader
+ * @see java.io.FilterOutputStream
  * @author no1
  *
  */

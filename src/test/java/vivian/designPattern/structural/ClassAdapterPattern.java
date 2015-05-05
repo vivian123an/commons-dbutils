@@ -18,6 +18,11 @@ import java.util.List;
  * 
  * @author no1
  * @see    AdapterPattern
+ * @see	java.util.Arrays#asList()
+ * @see	java.io.InputStreamReader(InputStream) (returns a Reader)
+ * @see	java.io.OutputStreamWriter(OutputStream) (returns a Writer)
+ * @see	javax.xml.bind.annotation.adapters.XmlAdapter#marshal()
+ * @see	javax.xml.bind.annotation.adapters.XmlAdapter#unmarshal()
  */
 class ClassAdapter extends ArrayList implements IQueue{
 	@Override
