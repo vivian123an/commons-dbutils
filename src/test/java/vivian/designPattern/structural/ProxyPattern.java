@@ -10,6 +10,7 @@ package vivian.designPattern.structural;
  * 
  * Provide a surrogate or placeholder for another object to control access to it.
  * 
+ * wikiPedia:
  * Create a "wrapper" for a remote, or expensive, or sensitive target
  * Encapsulate the complexity/overhead of the target in the wrapper
  * The client deals with the wrapper
