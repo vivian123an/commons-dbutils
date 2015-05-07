@@ -17,6 +17,7 @@ import org.junit.Test;
  * 单列模式
  * 定义：确保一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。
  * 类型：创建类模式
+ * @see java.lang.System
  * @author pingan
  * @since  2015-05-03
  */
