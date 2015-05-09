@@ -7,9 +7,18 @@ import java.util.List;
  * 
  * Decorator装饰模式是一种结构型模式，它主要是解决：“过度地使用了继承来扩展对象的功能”，由于继承为类型引入的静态特质，使得这种扩展方式缺乏灵活性；
  * 并且随着子类的增多（扩展功能的增多），各种子类的组合（扩展功能的组合）会导致更多子类的膨胀（多继承）。
- * 继承为类型引入的静态特质的意思是说以继承的方式使某一类型要获得功能是在编译时。所谓静态，是指在编译时；动态，是指在运行时。
+ * 继承为类型引入的[静态特质]的意思是说以继承的方式使某一类型要获得功能是在编译时。所谓静态，是指在编译时；动态，是指在运行时。
  * 
  * GoF《设计模式》中说道：动态的给一个对象添加一些额外的职责。就增加功能而言，Decorator模式比生成子类更为灵活。
+ * 
+ * 常用Wrapper关键字作为类的后缀{@link org.springframework.beans.BeanWrapperImpl}
+ * 常用Holder关键字作为类名的后缀{@link org.springframework.jdbc.datasource.ConnectionHolder}
+ * 
+ * 以BeanWrapper对构造完成的对象实例进行包裹，返回相应的BeanWrapper实例。
+ * BeanWrapper接口通常在Spring框架内部使用，它有一个实现类org.springframework.beans.BeanWapperImpl
+ * 其作用是对某个bean进行包裹，然后对这个包裹的bean进行操作，比如设置或者获取bean的相应属性值。
+ * 使用BeanWapper对bean实例进行操作很方便，可以免去直接使用Java反射API操作对象实例的烦琐。
+ * 
  * 
  * WikiPedia:
  * In object-oriented programming, the decorator pattern (also known as Wrapper, 
@@ -24,6 +33,9 @@ import java.util.List;
  * @see java.util.Collections#checkedMap()			checkedXXX()
  * @see java.util.Collections#synchronizedSet()  	synchronizedXXX()
  * @see java.util.Collections#unmodifiableList()   	unmodifiableXXX()
+ * 
+ * @{link java.io.BufferedInputStream} can decorate other streams such as @{link java.io.FilterInputStream}
+ * 
  * 
  * All subclasses InputStream, OutputStream, Reader and Writer have a constructor taking an instance of same type.
  * @see java.io.InputStream 

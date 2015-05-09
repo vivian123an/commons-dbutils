@@ -37,10 +37,10 @@ public class StrategyPattern {
 	@Test
 	public void test(){
 		System.out.println("----------- context first time -----------");
-		Context context = new Context(new ConcreteStrategy1());
-		context.execute();
+		Context context1 = new Context(new ConcreteStrategy1());
+		context1.execute();
 		System.out.println("----------- context second time ------------");
-		context = new Context(new ConcreteStrategy2());
-		context.execute();
+		Context context2 = new Context(new ConcreteStrategy2());
+		context2.execute();
 	}
 }

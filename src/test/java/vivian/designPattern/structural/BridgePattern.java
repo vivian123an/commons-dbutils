@@ -27,7 +27,7 @@ package vivian.designPattern.structural;
  * In fact, the bridge pattern is often implemented using the class adapter pattern, e.g. in the Java code below.
  * 
  * 
- * 
+ * @see java.util.Collection classes in java.util.List implemented by ArrayList
  * @author no1
  *
  */
