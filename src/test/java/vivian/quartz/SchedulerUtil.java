@@ -3,6 +3,7 @@ package vivian.quartz;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -105,17 +106,17 @@ public class SchedulerUtil {
 
 		scheduler.pauseAll();
 		scheduler.start();
-		String[] triggerGroups = scheduler.getTriggerGroupNames();
+		/*List<String> triggerGroups = scheduler.getTriggerGroupNames();
 
-		for (int i = 0; i < triggerGroups.length; i++) {
-			String[] triggersInGroup = scheduler.getTriggerNames(triggerGroups[i]);
+		for (String triggerGroup:triggerGroups) {
+			String[] triggersInGroup = scheduler.getTriggerNames(triggerGroup);
 			for (int j = 0; j < triggersInGroup.length; j++) {
-				Trigger t = scheduler.getTrigger(triggersInGroup[j], triggerGroups[i]);
+				Trigger t = scheduler.getTrigger(triggersInGroup[j], triggerGroup);
 				if (t.getDescription() == null || !t.getDescription().endsWith(PAUSED_FLAG)) {
-					scheduler.resumeTrigger(triggersInGroup[j], triggerGroups[i]);
+					scheduler.resumeTrigger(triggersInGroup[j], triggerGroup);
 				}
 			}
-		}
+		}*/
 	}
 
 	public static void unpausedTriggerInConfig(String triggerName) throws Exception {
