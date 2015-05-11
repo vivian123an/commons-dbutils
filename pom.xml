@@ -45,6 +45,22 @@
   </scm>
 
   <dependencies>
+  		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+  	<dependency>  
+      <groupId>commons-lang</groupId>  
+      <artifactId>commons-lang</artifactId>  
+      <version>2.6</version>  
+    </dependency>
+  	<dependency>
+		<groupId>org.quartz-scheduler</groupId>
+		<artifactId>quartz</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -97,11 +113,11 @@
 		<artifactId>catalina</artifactId>
 		<version>4.1.9</version>
 	</dependency> -->
-	<dependency>
+	<!-- <dependency>
 		<groupId>org.apache.tomcat</groupId>
 		<artifactId>tomcat-catalina</artifactId>
 		<version>7.0.42</version>
-	</dependency>
+	</dependency> -->
 	<!-- <dependency>
 		<groupId>org.apache.tomcat</groupId>
 		<artifactId>catalina</artifactId>
@@ -111,6 +127,13 @@
 		<groupId>org.eclipse.jetty.aggregate</groupId>
 		<artifactId>jetty-all-server</artifactId>
 		<version>8.1.16.v20140903</version>
+		<exclusions>
+			<exclusion>
+			 	<groupId>org.eclipse.jetty.orbit</groupId>
+			  	<artifactId>javax.servlet</artifactId>
+			  	<version>3.0.0.v201112011016</version>
+			</exclusion>
+		</exclusions>
 	</dependency>
 	<!-- <dependency>
 		<groupId>org.eclipse.jetty</groupId>
@@ -166,6 +189,18 @@
 		<artifactId>spring-beans</artifactId>
 		<version>4.0.2.RELEASE</version>
 	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>4.0.2.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.1.0</version>
+	</dependency>
+	
+	
   </dependencies>
 
   <developers>
@@ -330,8 +365,8 @@
   </distributionManagement>
 
   <properties>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
     <commons.componentid>dbutils</commons.componentid>
     <commons.release.version>1.6</commons.release.version>
     <commons.rc.version>RC1</commons.rc.version>
@@ -360,6 +395,15 @@
           <tarLongFileMode>gnu</tarLongFileMode>
         </configuration>
       </plugin>
+      <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-compiler-plugin</artifactId>  
+            <version>2.0.2</version>  
+            <configuration>  
+                <source>1.7</source>  
+                <target>1.7</target>  
+            </configuration>  
+        </plugin> 
     </plugins>
   </build>
 
