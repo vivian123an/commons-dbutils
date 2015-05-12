@@ -72,5 +72,4 @@ public class M2cMethodInvokingJobDetailFactoryBean extends MethodInvokingJobDeta
 
 	public static class M2cStatefulMethodInvokingJob extends M2cMethodInvokingJob {
 	}
-
 }

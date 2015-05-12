@@ -117,7 +117,8 @@ public class JettyTest {
 		 server.setConnectors(new Connector[]{ connector }); 
 		 ServletContextHandler root = new ServletContextHandler(null,"/",ServletContextHandler.SESSIONS); 
 		 server.setHandler(root); 
-		 root.addServlet(new ServletHolder(new HttpServletRequestDemo()),"/"); 
+		 //root.addServlet(new ServletHolder(new HttpServletRequestDemo()),"/"); 
+		 root.addServlet(new ServletHolder(new LongRunningServlet()),"/"); 
 		 try {
 			server.start();
 			server.join();
