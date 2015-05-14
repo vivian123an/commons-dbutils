@@ -1,6 +1,8 @@
 package vivian.threadLocal;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutorCompletionService;
@@ -58,8 +60,8 @@ public class ThreadLocalServlet extends HttpServlet {
 		} 
 	}
 	
-	
 	public void test2() throws Exception{
+		Set<String> set = new HashSet<String>();
         CompletionService<String> cs = new ExecutorCompletionService<String>(Executors.newCachedThreadPool());  
         for(int i = 1; i < 1000; i++) {  
             final int taskID = i;  
@@ -74,9 +76,13 @@ public class ThreadLocalServlet extends HttpServlet {
             });  
         }  
         for(int i = 1; i < 1000; i++) {  
-            System.out.println(cs.take().get());  
+        	String result = cs.take().get();
+            System.out.println(result);
+            set.add(result);
             System.out.println("-------------------");
         }
+        System.out.println("++++++++++++++++++++");
+        System.out.println(set.size());
 	}
 	
 }

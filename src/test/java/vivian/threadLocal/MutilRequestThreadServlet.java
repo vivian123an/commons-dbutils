@@ -1,6 +1,8 @@
 package vivian.threadLocal;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutorCompletionService;
@@ -13,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -46,7 +47,7 @@ public class MutilRequestThreadServlet extends HttpServlet{
 	public String username;
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	synchronized (this) {
+    	//synchronized (this) {
         	username =request.getParameter("username");
             /*try {
                 Thread.sleep(500);
@@ -54,10 +55,9 @@ public class MutilRequestThreadServlet extends HttpServlet{
                 e.printStackTrace();
             }*/
             response.getWriter().print("hello:"+username);
-		}
+		//}
     }
     
-    @Test
 	public void test() {
 		 Server server = new Server(); 
 		 Connector connector = new SelectChannelConnector(); 
@@ -77,6 +77,7 @@ public class MutilRequestThreadServlet extends HttpServlet{
 	
 	@Test
 	public void test2() throws Exception{
+		Set<String> set = new HashSet<String>();
         CompletionService<String> cs = new ExecutorCompletionService<String>(Executors.newCachedThreadPool());  
         for(int i = 1; i < 1000; i++) {  
             final int taskID = i;  
@@ -91,9 +92,13 @@ public class MutilRequestThreadServlet extends HttpServlet{
             });  
         }  
         for(int i = 1; i < 1000; i++) {  
-            System.out.println(cs.take().get());  
+        	String result = cs.take().get();
+            System.out.println(result);
+            set.add(result);
             System.out.println("-------------------");
         }
+        System.out.println("++++++++++++++++++++");
+        System.out.println(set.size());//每个请求线程收到的反馈String都是唯一的
 	}
                                     
 }
